@@ -8,12 +8,31 @@
 
 </head>
 <body>
+    <script>
+        var index = 0;
+        function myFunction(i) {
+            const pics = ["pics/uozone-homepage.png", "pics/uozone-services.png", "pics/uozone-academics.png","pics/uozone-finances.png", "pics/uozone-applications.png"]
+            index = index +i;
+            if(index == -1){
+                index = 4
+            }
+            else if(index == 5){
+                index = 0
+            }
+            document.getElementById("img").src = pics[index];
+        }
+    </script>
 
     <!--Question 4-->
     <div class="question">
 
         <div class="q-title">Question 4/5</div>
-
+        <div class="container">
+            <img class = "img" id="img" src="pics/uozone-homepage.png" style="width:100%">
+            <button class="prev" onClick="myFunction(-1)"><</button>
+            <button class="next" onclick="myFunction(1)">></button>
+        </div>    
+          
                 
         <label for="checkboxQuestion">What pages do you most commonly use in uoZone?</label>
         <div class="option">

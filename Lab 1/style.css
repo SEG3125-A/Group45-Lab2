@@ -118,3 +118,54 @@ button:hover {
     bottom: 0;
     width: 100%;
 }
+
+/* Container needed to position the button. Adjust the width as needed */
+.container {
+    position: relative;
+    width:95%;
+  }
+  
+  /* Make the image responsive */
+  .container img {
+    width: 100%;
+    height: auto;
+  }
+  
+
+/* Style the button and place it in the middle of the container/image */
+.container .next {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    background-color: #55555562;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: auto;
+  }
+
+  .container .prev {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    background-color: #55555562;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: auto;
+
+  }  
+  
+  .container .next:hover{
+    color: white;
+    background-color: black;
+  }
+
+  .container .prev:hover{
+    color: white;
+    background-color: black;
+  }
