@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+	<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<!-- Tab links, each one with an onclick event associated with it -->
+<div class="tab">
+  <button class="tablinks" onclick="openInfo(event, 'Home')">Home</button>
+  <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+  <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+  <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+</div>
+
+<!-- Tab content -->
+<div id="Home" class="tabcontent">
+    <h3>OnlineCart</h3>
+    <p>Welcome to Our Grocery Store!  </p>
+    <p>Explore a variety of products, customize your shopping experience, and enjoy convenient online grocery shopping.</p>
+    <div id="displayCart"></div>
+  </div>
+
+<div id="Client" class="tabcontent">
+  <h3>Client Information</h3>
+  <p>Dietary restrictions or preferences? Please inform us.</p>
+	Choose a Category:
+	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+	<option value=""></option>
+	<option value="Vegetarian">Vegetarian</option>
+    <option value="Halal">Halal</option>
+    <option value="GlutenFree">GlutenFree</option>
+    <option value="None">None</option>
+	</select>
+
+    <!-- Choose Organic or Non-Organic -->
+  <label for="organicSelect">Organic Preference:</label>
+  <select id="organicSelect" name="organicSelect" onchange="populateListProductChoices('dietSelect', 'displayProduct')">
+    <option value="All">All</option>
+    <option value="Organic">Organic</option>
+    <option value="NonOrganic">Non-Organic</option>
+  </select>
+
+  <div>
+   <!-- Additional Dietary Restrictions or Concerns -->
+   <label for="userCharacteristics">Additional Dietary Restrictions or Concerns:</label>
+   <input type="text" id="userCharacteristics" name="userCharacteristics" placeholder="e.g., diabetic, lactose intolerant">
+   </div>
+</div>
+
+<div id="Products" class="tabcontent">
+  <h3>Your targeted products</h3>
+  <p>We preselected products based on your restrictions.</p>
+	 Choose items to buy:
+	 <div id="displayProduct"></div>
+	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
+		Add selected items to cart.
+	</button>
+</div>
+
+<div id="Cart" class="tabcontent">
+  <h3>Cart</h3>
+  <p>Here is your cart.</p>
+  <div id="displayCart"></div>
+</div>
+
+<script src="scripts/groceries.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
