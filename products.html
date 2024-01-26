@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grocery Store</title>
+    <title>Products</title>
     <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/script.js"></script>
-
 </head>
+<script>
+    var products = new Array();
+    var prices= new Array();
+    function addToCart(name, price) {
+        // Increment the cart count
+        products.push(name)
+        prices.push(price)
+        document.getElementById("cart-count").innerText = parseInt(document.getElementById("cart-count").innerText) + 1
+        localStorage.setItem("names", products);
+        localStorage.setItem("prices", prices);
+    }
+</script>
 <body>
     <menu>
         <a href="profile.html">
@@ -35,15 +45,9 @@
         </a>
     </menu>
 
-
-    <div id="eating-info">
-        <h1>Tell us a bit about you!</h1>
-        <h3>Choose your dietary preferences or restrictions</h3>
-
-        <a href="profile.html" target="_blank"> 
-            <button id="bw">Go to my Profile</button>
-        </a>
-
+    <p id="current-diet"></p>
+    <div id="products">
     </div>
-
+    <script src="scripts/products.js"></script>
 </body>
+</html>

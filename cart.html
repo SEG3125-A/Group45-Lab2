@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+    <title>Cart</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/cart.css">
 </head>
 <body>
     <menu>
@@ -32,11 +33,13 @@
             <line></line>
         </a>
     </menu>
-
-    <p id="current-diet"></p>
-    <div id="products">
-    </div>
-    <script src="scripts/products.js"></script>
+    <table id="productTable">
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+        </tr>  
+    </table>
 
 </body>
+<script src="scripts/cart.js"></script>
 </html>

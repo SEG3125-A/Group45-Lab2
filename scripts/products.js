@@ -1,3 +1,5 @@
+
+
 // function to retrieve diet selection from localStorage
 function retrieveUserSelection() {
   const userSelection = localStorage.getItem("userSelection");
@@ -35,7 +37,7 @@ async function displayArticles() {
                       <h2 id="name">${product.name}</h2>
                       <p id="description">${product.description}</p>
                       <p id="price">${product.price}</p>
-                      <button id="add-cart" onclick="addToCart()">Add to cart</button>
+                      <button id="add-cart" onclick="addToCart('${product.name}','${product.price}')">Add to cart</button>
                   `;
           articlesContainer.appendChild(articleElement);
         }
